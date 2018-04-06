@@ -1,0 +1,32 @@
+//programa para integracion numerica
+#include <iostream>
+#include <cmath>
+
+using func = double (double);
+
+double Trapecio(const double a, const double b, const int n, func Funtion);
+
+int main ()
+{
+  const int N = 20;
+
+  std::cout << "Metodo trapecio (n=20):" << Trapecio(0, M_PI, N, std::sin) << std::endl ;
+  std::cout << "Metodo trapecio (n=20):" << Trapecio(0, M_PI, N*2, std::sin)<<std::endl ;
+    
+}
+
+double Trapecio(const double a, const double b, const int n, func Funtion)
+{
+  double h = (a-b)/n;
+  double alpha = (Funtion(a)+Funtion(b))/2;
+  double Sum = 0;
+  int i =1;
+  while(i<(n-1))
+    
+    {
+      Sum = Sum + Function (h*i+a);
+      i=i+1;
+    }
+  return (Sum+alpha)*h;
+}
+		
